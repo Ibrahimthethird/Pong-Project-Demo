@@ -11,11 +11,8 @@ void setup() {
   int referentMeasures = (width < height) ? width : height ;
    myBall.x = startX; //spawn myBall in the middle of the display
    myBall.y = startY;
-   myBall.d = referentMeasures * 1/20;
-   myBall.colour = color( random(0,255), random(255), random(255)) ; //random(), random()-shortcut, casting from float to int to color variable
-   fill(myBall.colour); //Caution: must reset defaults
+   myBall.d = referentMeasures;
  // ellipse(x, y, diameter, diameter); //ball\
- fill(0); //Reset to GrayScale: 0 to 255 in shades of gray
  //Ball yourBall = new Ball();
  //yourBall.x =
 } //End setup
