@@ -1,4 +1,5 @@
 //Global Variables //This is for the whole program except classes. 
+hello
 
 //
 void setup() {
