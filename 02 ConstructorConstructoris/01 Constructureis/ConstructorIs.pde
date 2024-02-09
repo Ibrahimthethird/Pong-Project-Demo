@@ -12,12 +12,13 @@ void setup() {
   myBall.x = startX; //spawn myBall in the middle of the display
   myBall.y = startY;
   myBall.d = referentMeasure * 1/20;
-  myBall.colour = color ( random(0, 255), random(255), random(255) ) ; //random(), random()-shortcut, casting from float to intin color var
-  //fill(myBall.colour); //CAUTION: must reset defaults
-  //ellipse(myBall.x, myBall.y, myBall.diameter, myBall.diameter); //ball
-  //fill(0); //Reset to GrayScale: 0 to 255 in shades of gray
+  myBall.colour = color ( random(0, 255), random(255), random(255) ) ; //random(), random()-shortcut, casting from float to int in color var
+  fill(myBall.colour); //CAUTION: must reset defaults
+  ellipse(myBall.x, myBall.y, myBall.d, myBall.d); //ball
+  fill(0); //Reset to GrayScale: 0 to 255 in shades of gray
   //Ball yourBall = new Ball();
   //yourBall.x =
+  //
 } //End setup
 //Garbage collection happens here
 void draw() {
