@@ -1,5 +1,7 @@
 //Global Variables //This is for the whole program except classes. 
  Ball myBall = new Ball(); // Both 1/2's of Constructor
+ //
+ color pongTableColour; //ERROR! move to Table Class
  //Ball yourball
 // Constructor is populating the instence of ball
 void setup() {
@@ -10,9 +12,11 @@ void setup() {
   myBall = new Ball(); //Both 1/2's of constructor
   // yourBall = new Ball();
   //
+  color pongTableColour = 255; //ERRor! MOve to 
 } //End setup
 //
 void draw() {
+  background(pongTableColour); //NIght Mode is known in Class, not Driver
   myBall.draw();
 } //End draw
 //
