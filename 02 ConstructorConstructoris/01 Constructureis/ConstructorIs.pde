@@ -1,26 +1,19 @@
 //Global Variables //This is for the whole program except classes.
 Ball myBall, yourBall;
-Ball[] fireworks = new Ball[500];
+Ball[] fireworks = new Ball[5];
 Ball movedBall;
 //
 color pongTableColour = 255;
 
-float cx = 0;      // circle position (set with mouse)
-float cy = 0;
-float r = 30;      // circle radius
-
-float sx = 200;    // square position
-float sy = 100;
-float sw = 200;    // and dimensions
-float sh = 200;
 //Ball // yourBall
 // Constructor is populating the instence of ball
 void setup() {
-  fullScreen(); //can also use size() but will not be full screen
+  fullScreen();
+  noStroke();
+  //can also use size() but will not be full screen
   /*ScreenSizeCheckerr() for landscape, Protrait, Square views
    */
   //Population
-  noStroke();
   myBall = new Ball(); //Both 1/2's of constructor
   for (int i = 0; i < fireworks.length; i++ ) {
     fireworks[i] = new Ball(displayWidth*-1, displayHeight*-1, 0.5);
@@ -41,9 +34,9 @@ void draw() {
   //Trigger: Left Goal, Right Gola
   //Error: Ball Instance still bounces
   if ( myBall.x<(2*myBall.d) || myBall.x>( displayWidth - (2*myBall.d) ) || movedBall.x<(2*movedBall.d) || movedBall.x>( displayWidth - (2*movedBall.d) ) ) {
-  if (myBall.x<(2*myBall.d) || myBall.x>(displayWidth-(2*myBall.d))) netExplosion( myBall.x, myBall.y);
-  if (movedBall.x<(2*movedBall.d) ||movedBall.x>(displayWidth-(2*movedBall.d))) netExplosion( movedBall.x, movedBall.y);
-}
+    if (myBall.x<(2*myBall.d) || myBall.x>(displayWidth-(2*myBall.d))) netExplosion( myBall.x, myBall.y);
+    if (movedBall.x<(2*movedBall.d) ||movedBall.x>(displayWidth-(2*movedBall.d))) netExplosion( movedBall.x, movedBall.y);
+  }
   for (int i=0; i < fireworks.length; i++) { //GOAL! Firework Constructor Execution, based on X-value
     fireworks[i].draw();
   }

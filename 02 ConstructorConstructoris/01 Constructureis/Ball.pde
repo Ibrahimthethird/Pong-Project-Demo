@@ -8,7 +8,7 @@ class Ball
   color colour;
   float xSpeed, ySpeed, xSpeedChange=1.0, ySpeedChange=1.0;
   float gravity =0.0;
-  boolean disappear = false;
+  boolean disappear = false, netExplosion = false;
   //static int count = 25; //Static Number for Amount of Ball instances in a firework
   //
   //Constructor
@@ -64,9 +64,9 @@ class Ball
     return xDirection;
   } //End xSpeedChange
   float yDirection() {
-    float yDirection = int (random(-20, 20));
+    float yDirection = int (random(-50, 50));
     while (yDirection ==0) {
-      yDirection = int (random(-20, 20));
+      yDirection = int (random(-50, 50));
     }
     return yDirection;
   } //Edn ySpeedChange
@@ -74,15 +74,13 @@ class Ball
     fill(colour);
     ellipse(x, y, d, d); //Easter Egg: at bounce diameters changes
     fill(0);
-    if (myBall.x == 1900-(2*myBall.d)) {
-      pongTableColour = color(230, 05, 10);
-    } while (
-    if (myBall.x == 1900-(2*myBall.d) {
-      pongTableColour = color(230, 05, 10);
-   if (myBall.x <= 1890 | myBall.x <= 10) {
-   pongTableColour = color(255,125,65);
-    }
-    //
+ /*   if (myBall.x >= 1850 || myBall.x <= 50) {
+     background(color(230,10,5));
+    } 
+     if (movedBall.x >= 1850 || movedBall.x <= 50) {
+     background(color(random(0,255),random(0,255),random(0,255)));
+    } */
+    
     step(); //Manipulating the Variables
   }//End draw
   void step() {
